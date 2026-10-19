@@ -1,56 +1,43 @@
-# docker-compose for building the image for debugging and uploading to docker hub etc.
 services:
-  php-apache:
-    platform: linux/amd64
-    image: registry.code.fbi.h-da.de/ewa_public/26ss_base_project/ewa_php-apache:latest
-    container_name: ewa_lab_php_apache
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: pizzaservice_web
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./app:/var/www/html
     environment:
       TZ: "Europe/Berlin"
-    ports:
-      - 127.0.0.1:80:80
-    volumes:
-      - ./src:/var/www/html
-      - ./php-apache/httpd-ewa.conf:/etc/apache2/conf-enabled/httpd-ewa.conf:ro
-    networks:
-      - ewa_lab_network
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      DB_HOST: db
+      DB_USER: public
+      DB_PASSWORD: public
+      DB_NAME: pizzaservice
+    depends_on:
+      - db
 
-  mariadb:
-    platform: linux/amd64
-    image: registry.code.fbi.h-da.de/ewa_public/26ss_base_project/ewa_mariadb:latest
-    container_name: ewa_lab_mariadb
+  db:
+    image: mariadb:11
+    container_name: pizzaservice_db
     volumes:
-      - mariadb:/var/lib/mysql
-      - ./mariadb/mariadb.setup:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d:ro
     environment:
-      MYSQL_INITDB_SKIP_TZINFO: 1
       TZ: "Europe/Berlin"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-      MYSQL_ROOT_PASSWORD: "ganzGeheim"
-      MYSQL_DATABASE: "ewa"
-      MYSQL_USER: "public"
-      MYSQL_PASSWORD: "public"
-    ports:
-      - "3306:3306"
-    networks:
-      - ewa_lab_network      
+      MARIADB_ROOT_PASSWORD: "root"
+      MARIADB_USER: public
+      MARIADB_PASSWORD: public
 
-  phpadmin:
-    platform: linux/amd64
-    image: registry.code.fbi.h-da.de/ewa_public/26ss_base_project/ewa_phpmyadmin:latest
-    container_name: ewa_lab_phpmyadmin
-    networks:
-      - ewa_lab_network
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: pizzaservice_phpmyadmin
     ports:
-      - 127.0.0.1:8085:80
+      - "127.0.0.1:8085:80"
     environment:
-      PMA_HOST: mariadb
-      PMA_PORT: 3306
+      PMA_HOST: db
+    depends_on:
+      - db
+
 volumes:
-    mariadb:
-    
-networks:
-    ewa_lab_network:
-        name: ewa_lab_net
-        driver: bridge
+  db-data:
