@@ -1,0 +1,33 @@
+:root {
+    /* -- Hauptfarben (Primary) für das Branding, z. B. Buttons, Links oder Highlights -- */
+    --color-primary: #d84315;        /* Ein kräftiges Orange-Rot für primäre Elemente */
+    --color-primary-dark: #a52c0b;   /* Ein dunkleres Orange-Rot, ideal für Hover-Effekte von Primärelementen */
+    
+    /* -- Sekundärfarbe für Akzente oder weniger wichtige Highlights -- */
+    --color-secondary: #f39c12;     /* Ein warmes Gelb-Orange für Warnungen, Badges oder sekundäre Akzente */
+    
+    /* -- Erfolgsfarben (Success) für positive Rückmeldungen oder Bestätigungen -- */
+    --color-success: #2e7d32;       /* Ein sattes Grün für Erfolgsmeldungen, Haken oder "Erfolgreich"-Buttons */
+    --color-success-dark: #1b5e20;  /* Ein dunkleres Grün für Hover-Effekte oder Text auf hellem Grün-Hintergrund */
+    
+    /* -- Struktur- und Hintergrundfarben -- */
+    --color-bg: #f8f8f8;            /* Ein sehr helles Grau für den Haupt-Hintergrund der gesamten Website */
+    --color-surface: #ffffff;       /* Ein reines Weiß für Karten (Cards), Boxen oder Container, die sich vom Hintergrund abheben */
+    --color-text: #222222;          /* Ein sehr dunkles Grau (fast Schwarz) für optimale Lesbarkeit des Haupttextes */
+    --color-border: #aaaaaa;        /* Ein mittleres Grau für Trennlinien, Rahmen von Inputs oder Boxen-Ränder */
+
+    /* -- Schriftgrößen (Typography) -- */
+    --font-size-base: 1rem;         /* Die Standard-Schriftgröße für normalen Fließtext (meistens 16px) */
+    --font-size-lg: 1.5rem;         /* Eine größere Schriftgröße, perfekt für Unterüberschriften oder wichtige Teaser */
+
+    /* -- Abstände (Paddings & Margins) für ein konsistentes Layout-Raster -- */
+    --spacing-sm: 0.5rem;           /* Kleiner Abstand (ca. 8px) für Innenabstände in Buttons oder zwischen engen Elementen */
+    --spacing-md: 1rem;             /* Mittlerer Standard-Abstand (ca. 16px) für Abstände zwischen Absätzen oder Boxen */
+    --spacing-lg: 2rem;             /* Großer Abstand (ca. 32px) für großzügige Abstände zwischen ganzen Sektionen */
+
+    /* -- Abrundungen (Border Radius) -- */
+    --radius-base: 4px;             /* Standard-Eckenabrundung für Buttons, Eingabefelder und kleinere Boxen */
+
+    /* -- Schriftart (Google Font, lokal eingebunden) -- */
+    --font-family-base: 'Poppins', system-ui, sans-serif;
+} 

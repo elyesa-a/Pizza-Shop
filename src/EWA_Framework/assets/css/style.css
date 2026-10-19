@@ -1,0 +1,32 @@
+/* 
+ Main stylesheet for global styles.
+ Add your CSS here to style the whole site.
+
+ You can also create and link additional CSS files
+ for specific pages or components if needed.
+*/
+
+body {
+    background-color: #f8f8f8;
+}
+
+.main-nav {
+    margin: 1rem 0;
+}
+
+.main-nav a {
+    display: inline-block;
+    margin-right: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.main-nav a:hover {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}

@@ -1,0 +1,57 @@
+
+/* ==========================================================================
+   Media Queries (Desktop-First: Basis-Styles oben gelten für Desktop > 1024px,
+   hier werden sie für kleinere Viewports gezielt überschrieben)
+   ========================================================================== */
+
+/* -- Tablet: 768px–1024px -- */
+@media (max-width: 1024px) { /* Tablet-Styles für Viewports zwischen 768px und 1024px */
+    .order-layout {
+        gap: var(--spacing-md);
+    }
+
+    .cart-section {
+        flex-basis: 240px;
+    }
+
+    .pizza-card {
+        flex-basis: 160px;
+    }
+}
+
+/* -- Mobil: < 768px -- */
+@media (max-width: 767px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-nav a {
+        text-align: center;
+    }
+
+    .order-layout {
+        flex-direction: column;
+    }
+
+    .menu-section,
+    .cart-section {
+        flex-basis: auto;
+    }
+
+    .pizza-grid {
+        flex-direction: column;
+    }
+
+    .pizza-card {
+        flex-basis: auto;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .cart-actions button {
+        width: 100%;
+    }
+}

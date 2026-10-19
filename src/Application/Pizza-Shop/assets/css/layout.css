@@ -1,0 +1,44 @@
+/* -- Flexbox: Speisekarte links, Warenkorb rechts (zwei Spalten) -- */
+.order-layout {
+    display: flex; 
+    flex-wrap: wrap; /* ermöglicht Umbruch bei kleineren Viewports */
+    align-items: flex-start; /* Ausrichtung der Spalten am oberen Rand */
+    gap: var(--spacing-lg); /* Abstand zwischen den Spalten */
+}
+
+.menu-section {
+    flex: 3 1 500px;
+}
+
+.cart-section {
+    flex: 1 1 280px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    padding: var(--spacing-md);
+}
+
+/* -- Flexbox: Pizzakarten in Reihen mit automatischem Umbruch -- */
+.pizza-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.pizza-card {
+    flex: 1 1 200px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    padding: var(--spacing-sm);
+    box-sizing: border-box;
+}
+
+.pizza-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* sorgt dafür, dass das Bild quadratisch bleibt */
+    object-fit: cover; /* Bild wird zugeschnitten, um den Container auszufüllen */
+    border-radius: var(--radius-base); /* abgerundete Ecken für das Bild */
+    cursor: pointer; /* zeigt an, dass das Bild anklickbar ist */
+}

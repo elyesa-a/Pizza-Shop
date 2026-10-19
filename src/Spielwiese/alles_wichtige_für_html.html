@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!-- Sagt dem Browser:
+     Dieses Dokument verwendet HTML5. -->
+
+<html lang="de">
+<!-- Start des gesamten HTML-Dokuments.
+     lang="de" bedeutet: Der Inhalt ist auf Deutsch. -->
+
+<head>
+    <!-- Im head-Bereich stehen Informationen über die Webseite.
+         Diese Informationen sieht man normalerweise nicht direkt auf der Seite. -->
+
+    <meta charset="UTF-8">
+    <!-- Legt die Zeichenkodierung fest.
+         UTF-8 sorgt dafür, dass Umlaute wie ä, ö und ü richtig dargestellt werden. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Wichtig für Smartphones:
+         width=device-width:
+         Die Seitenbreite passt sich an die Breite des Geräts an.
+
+         initial-scale=1.0:
+         Die Seite wird beim Laden nicht automatisch vergrößert oder verkleinert. -->
+
+    <title>HTML Übersicht</title>
+    <!-- Der Text im title-Tag erscheint im Browser-Tab. -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Bindet eine externe CSS-Datei ein.
+         In style.css könnte später das Design der Seite stehen. -->
+</head>
+
+<body>
+    <!-- Im body-Bereich steht alles, was auf der Webseite sichtbar ist. -->
+
+    <header>
+        <!-- header ist der Kopfbereich einer Seite.
+             Darin stehen oft Logo, Titel und Navigation. -->
+
+        <h1>Meine HTML-Übersicht</h1>
+        <!-- h1 ist die wichtigste Überschrift der gesamten Seite.
+             Normalerweise gibt es nur eine h1 pro Seite. -->
+
+        <nav>
+            <!-- nav kennzeichnet einen Bereich mit Navigation. -->
+
+            <a href="#text">Text</a>
+            <!-- Ein Link.
+                 href="#text" springt zum Element mit id="text". -->
+
+            <a href="#listen">Listen</a>
+            <!-- Link zum Bereich mit der ID "listen". -->
+
+            <a href="#bild">Bild</a>
+            <!-- Link zum Bereich mit der ID "bild". -->
+
+            <a href="#formular">Formular</a>
+            <!-- Link zum Bereich mit der ID "formular". -->
+        </nav>
+        <!-- Ende der Navigation. -->
+    </header>
+    <!-- Ende des Kopfbereichs. -->
+
+    <main>
+        <!-- main enthält den zentralen bzw. wichtigsten Inhalt der Seite.
+             Es sollte normalerweise nur einen main-Bereich pro Seite geben. -->
+
+        <section id="text">
+            <!-- section ist ein zusammengehörender Inhaltsbereich.
+                 id="text" erlaubt es einem Link mit href="#text",
+                 genau zu diesem Bereich zu springen. -->
+
+            <h2>Typografie und Text</h2>
+            <!-- h2 ist eine Überschrift der zweiten Ebene.
+                 Sie ist einer h1 untergeordnet. -->
+
+            <p>
+                <!-- p steht für paragraph, also Absatz. -->
+
+                Das ist ein normaler Absatz mit einem
+                <strong>wichtigen Text</strong>.
+                <!-- strong markiert wichtigen Text.
+                     Browser stellen ihn normalerweise fett dar. -->
+            </p>
+
+            <p>
+                Ein <span>span-Element</span> markiert einen kleinen
+                Bereich innerhalb einer Textzeile.
+            </p>
+            <!-- span ist ein neutraler Inline-Container.
+                 Er erzeugt keinen neuen Absatz und keine neue Zeile.
+                 Er wird häufig genutzt, um einen kleinen Textbereich
+                 gezielt mit CSS anzusprechen. -->
+
+            <p>
+                Dieser Text wird<br>
+                <!-- br erzeugt einen Zeilenumbruch.
+                     Es ist ein Void-Tag und hat daher keinen schließenden Tag. -->
+
+                durch br in einer neuen Zeile fortgesetzt.
+            </p>
+
+            <hr>
+            <!-- hr erzeugt eine thematische bzw. horizontale Trennlinie.
+                 Auch hr ist ein Void-Tag. -->
+
+            <h3>Überschrift der Ebene 3</h3>
+            <!-- Unterüberschrift von h2. -->
+
+            <h4>Überschrift der Ebene 4</h4>
+            <!-- Noch weiter untergeordnete Überschrift. -->
+
+            <h5>Überschrift der Ebene 5</h5>
+
+            <h6>Überschrift der Ebene 6</h6>
+            <!-- h6 ist die kleinste Überschriftenebene. -->
+        </section>
+        <!-- Ende des Text-Bereichs. -->
+
+
+        <section id="listen">
+            <!-- Ein neuer zusammengehörender Abschnitt.
+                 Die ID erlaubt Links zu diesem Bereich. -->
+
+            <h2>Listen</h2>
+
+            <div>
+                <!-- div ist ein neutraler Block-Container.
+                     Er hat selbst keine besondere Bedeutung.
+                     Man verwendet ihn, um Inhalte zusammenzufassen. -->
+
+                <h3>Ungeordnete Liste</h3>
+
+                <ul>
+                    <!-- ul bedeutet unordered list:
+                         eine ungeordnete Liste mit Aufzählungspunkten. -->
+
+                    <li>HTML</li>
+                    <!-- li bedeutet list item:
+                         ein einzelner Listeneintrag. -->
+
+                    <li>CSS</li>
+
+                    <li>JavaScript</li>
+                </ul>
+                <!-- Ende der ungeordneten Liste. -->
+            </div>
+
+            <div>
+                <h3>Geordnete Liste</h3>
+
+                <ol>
+                    <!-- ol bedeutet ordered list:
+                         eine geordnete bzw. nummerierte Liste. -->
+
+                    <li>HTML schreiben</li>
+
+                    <li>CSS hinzufügen</li>
+
+                    <li>Seite testen</li>
+                </ol>
+                <!-- Ende der geordneten Liste. -->
+            </div>
+        </section>
+        <!-- Ende des Listen-Bereichs. -->
+
+
+        <section id="bild">
+            <!-- Abschnitt für ein Bild. -->
+
+            <h2>Bild</h2>
+
+            <img src="bild.jpg" alt="Beispielbild einer Webseite">
+            <!-- img fügt ein Bild ein.
+                 img ist ein Void-Tag und wird nicht geschlossen.
+
+                 src="bild.jpg":
+                 Gibt den Dateipfad bzw. Namen der Bilddatei an.
+
+                 alt="Beispielbild einer Webseite":
+                 Ist ein Alternativtext.
+                 Er wird zum Beispiel von Screenreadern vorgelesen,
+                 wenn Personen das Bild nicht sehen können. -->
+        </section>
+        <!-- Ende des Bild-Bereichs. -->
+
+
+        <aside>
+            <!-- aside enthält ergänzende Informationen.
+                 Dieser Inhalt ist nicht der wichtigste Seiteninhalt.
+                 Typische Beispiele: Hinweise, Werbung oder Sidebar. -->
+
+            <h2>Zusätzlicher Hinweis</h2>
+
+            <p>
+                HTML ist für die Struktur einer Webseite zuständig.
+            </p>
+        </aside>
+        <!-- Ende des ergänzenden Bereichs. -->
+
+
+        <section id="formular">
+            <!-- Abschnitt für Formularelemente. -->
+
+            <h2>Formular</h2>
+
+            <form action="#" method="post">
+                <!-- form startet ein HTML-Formular.
+
+                     action="#":
+                     Legt fest, wohin die Daten beim Absenden gesendet werden.
+                     # ist hier nur ein Platzhalter.
+
+                     method="post":
+                     Die Formulardaten werden mit der HTTP-Methode POST gesendet. -->
+
+                <p>
+                    <label for="name">Name:</label>
+                    <!-- label ist die sichtbare Beschriftung eines Eingabefelds.
+                         for="name" verweist auf das input-Element mit id="name". -->
+
+                    <input type="text" id="name" name="name">
+                    <!-- input ist ein Eingabefeld und ein Void-Tag.
+
+                         type="text":
+                         Ein normales Text-Eingabefeld.
+
+                         id="name":
+                         Eindeutige Kennung des Feldes.
+                         Diese ID wird vom label über for="name" benutzt.
+
+                         name="name":
+                         Der Name des Werts beim Absenden des Formulars.
+                         Ohne name wird der eingegebene Wert nicht übermittelt. -->
+                </p>
+
+                <p>
+                    <label for="alter">Alter:</label>
+
+                    <input type="number" id="alter" name="alter">
+                    <!-- type="number":
+                         Eingabefeld für Zahlen. -->
+                </p>
+
+                <p>
+                    <label for="geburtsdatum">Geburtsdatum:</label>
+
+                    <input type="date" id="geburtsdatum" name="geburtsdatum">
+                    <!-- type="date":
+                         Eingabefeld für ein Datum.
+                         Der Browser kann dafür oft einen Kalender anzeigen. -->
+                </p>
+
+                <p>
+                    <label for="email">E-Mail:</label>
+
+                    <input type="email" id="email" name="email">
+                    <!-- type="email":
+                         Eingabefeld für E-Mail-Adressen.
+                         Der Browser kann prüfen, ob die Eingabe ungefähr
+                         wie eine E-Mail-Adresse aufgebaut ist. -->
+                </p>
+
+                <p>
+                    <label for="passwort">Passwort:</label>
+
+                    <input type="password" id="passwort" name="passwort">
+                    <!-- type="password":
+                         Die eingegebenen Zeichen werden im Browser verdeckt angezeigt. -->
+                </p>
+
+                <p>
+                    <input type="radio" id="option-a" name="antwort" value="a">
+                    <!-- type="radio":
+                         Ein Radio-Button für genau eine Auswahl.
+
+                         name="antwort":
+                         Radio-Buttons mit demselben name gehören zusammen.
+                         Deshalb kann nur eine der Antworten ausgewählt werden.
+
+                         value="a":
+                         Dieser Wert wird übermittelt, wenn Option A gewählt wird. -->
+
+                    <label for="option-a">Antwort A</label>
+                    <!-- Klickt man auf den Label-Text, wird der Radio-Button ausgewählt. -->
+                </p>
+
+                <p>
+                    <input type="radio" id="option-b" name="antwort" value="b">
+                    <!-- Gleicher name="antwort" wie bei Option A.
+                         Daher können A und B nicht gleichzeitig aktiv sein. -->
+
+                    <label for="option-b">Antwort B</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="datenschutz" name="datenschutz">
+                    <!-- type="checkbox":
+                         Ein Kontrollkästchen.
+                         Es kann unabhängig von anderen Checkboxen
+                         aktiviert oder deaktiviert werden. -->
+
+                    <label for="datenschutz">
+                        Datenschutz akzeptieren
+                    </label>
+                </p>
+
+                <p>
+                    <label for="farbe">Lieblingsfarbe:</label>
+
+                    <input type="color" id="farbe" name="farbe">
+                    <!-- type="color":
+                         Ein Eingabefeld zur Auswahl einer Farbe.
+                         Browser zeigen dafür meistens einen Farbwähler an. -->
+                </p>
+
+                <p>
+                    <label for="bewertung">Bewertung:</label>
+
+                    <input
+                        type="range"
+                        id="bewertung"
+                        name="bewertung"
+                        min="1"
+                        max="10"
+                    >
+                    <!-- type="range":
+                         Ein Schieberegler.
+
+                         min="1":
+                         Kleinster auswählbarer Wert ist 1.
+
+                         max="10":
+                         Größter auswählbarer Wert ist 10. -->
+                </p>
+
+                <button type="submit">Absenden</button>
+                <!-- button erstellt einen Button.
+
+                     type="submit":
+                     Beim Klick wird das umgebende Formular abgesendet. -->
+
+                <input type="reset" value="Zurücksetzen">
+                <!-- Ein weiterer Button, diesmal als input.
+
+                     type="reset":
+                     Setzt die eingegebenen Formularwerte zurück.
+
+                     value="Zurücksetzen":
+                     Das ist der sichtbare Text auf dem Button. -->
+            </form>
+            <!-- Ende des Formulars. -->
+        </section>
+        <!-- Ende des Formular-Bereichs. -->
+
+
+        <article>
+            <!-- article enthält einen eigenständigen Inhalt.
+                 Dieser Inhalt könnte auch außerhalb der Seite
+                 allein sinnvoll sein, zum Beispiel ein Blogbeitrag. -->
+
+            <h2>Artikel</h2>
+
+            <p>
+                Das ist ein eigenständiger Artikelbereich.
+            </p>
+        </article>
+        <!-- Ende des Artikels. -->
+    </main>
+    <!-- Ende des Hauptinhalts. -->
+
+
+    <footer>
+        <!-- footer ist der Fußbereich der Seite.
+             Hier stehen oft Copyright, Kontakt, Impressum oder Datenschutz. -->
+
+        <p>© 2026 HTML-Übersicht</p>
+
+        <a href="#">Impressum</a>
+        <!-- Platzhalter-Link:
+             href="#" führt aktuell zu keiner anderen Seite. -->
+    </footer>
+    <!-- Ende des Fußbereichs. -->
+
+</body>
+<!-- Ende des sichtbaren Webseiteninhalts. -->
+
+</html>
+<!-- Ende des gesamten HTML-Dokuments. -->

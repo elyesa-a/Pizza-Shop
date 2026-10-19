@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- Teilt dem Browser mit, dass dieses Dokument HTML5 verwendet. -->
+
+<html lang="de">
+<!-- Start des HTML-Dokuments.
+     lang="de" bedeutet: Die Sprache der Seite ist Deutsch.
+     Das hilft z. B. Screenreadern und Suchmaschinen. -->
+
+<head>
+    <!-- Im head stehen Informationen über die Seite,
+         die nicht direkt im sichtbaren Seiteninhalt erscheinen. -->
+
+    <meta charset="UTF-8">
+    <!-- Legt die Zeichenkodierung fest.
+         UTF-8 sorgt dafür, dass Umlaute wie ä, ö, ü und Sonderzeichen korrekt angezeigt werden. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sorgt für eine gute Darstellung auf Smartphones:
+         width=device-width: Die Seitenbreite entspricht der Gerätebreite.
+         initial-scale=1.0: Die Seite startet ohne Vergrößerung oder Verkleinerung. -->
+
+    <title>H_DA – Quiz</title>
+    <!-- Der Text innerhalb von title erscheint im Browser-Tab. -->
+</head>
+
+<body>
+    <!-- Hier beginnt der sichtbare Inhalt der Webseite. -->
+
+    <header>
+        <!-- Der header ist der Kopfbereich der Seite. -->
+
+        <h1>h_da Quiz</h1>
+        <!-- h1 ist die wichtigste Überschrift der ganzen Seite. -->
+
+        <nav aria-label="Hauptnavigation">
+            <!-- nav kennzeichnet einen Navigationsbereich.
+                 aria-label beschreibt für Screenreader, welche Navigation dies ist. -->
+
+            <a href="#">Home</a>
+            <!-- Erstellt einen Link mit dem Text „Home“.
+                 href="#" ist ein Platzhalter-Link und führt aktuell nirgendwohin. -->
+
+            <a href="#">Impressum</a>
+            <!-- Link zum Impressum, aktuell ebenfalls nur ein Platzhalter. -->
+
+            <a href="#">Datenschutz</a>
+            <!-- Link zur Datenschutzerklärung, aktuell ebenfalls nur ein Platzhalter. -->
+        </nav>
+        <!-- Ende der Navigation. -->
+    </header>
+    <!-- Ende des Kopfbereichs. -->
+
+    <main>
+        <!-- main enthält den wichtigsten Inhalt der Seite.
+             Pro Seite sollte normalerweise nur ein main-Bereich existieren. -->
+
+        <section aria-labelledby="statistik-ueberschrift">
+            <!-- section erstellt einen zusammengehörenden Abschnitt.
+                 aria-labelledby verweist auf die Überschrift dieses Abschnitts.
+                 Screenreader erkennen dadurch: Diese Section heißt „Statistik“. -->
+
+            <h2 id="statistik-ueberschrift">Statistik</h2>
+            <!-- h2 ist eine Überschrift der zweiten Ebene.
+                 id="statistik-ueberschrift" gibt dieser Überschrift eine eindeutige Kennung.
+                 Diese Kennung wird oben bei aria-labelledby verwendet. -->
+
+            <p>Dein Punktestand: 1</p>
+            <!-- p erstellt einen Absatz mit dem aktuellen Punktestand. -->
+
+            <p>Dein aktueller Platz in der Rangliste: 3</p>
+            <!-- Ein weiterer Absatz mit der aktuellen Platzierung. -->
+        </section>
+        <!-- Ende des Statistik-Abschnitts. -->
+
+        <section aria-labelledby="frage-ueberschrift">
+            <!-- Neuer inhaltlicher Abschnitt für die Quizfrage.
+                 aria-labelledby verbindet den Abschnitt mit seiner Überschrift. -->
+
+            <h2 id="frage-ueberschrift">
+                Welches HTTP-Verfahren wird verwendet, um Daten vom Server abzurufen?
+            </h2>
+            <!-- Überschrift der zweiten Ebene mit der Quizfrage.
+                 Die id wird von aria-labelledby der section verwendet. -->
+
+            <form action="https://echo.hofmann-thomas.de/" method="post">
+                <!-- Start des Formulars.
+                     action legt fest, an welche Adresse die Formulardaten gesendet werden.
+                     method="post" sendet die Daten im Nachrichtentext der HTTP-Anfrage. -->
+
+                <fieldset>
+                    <!-- fieldset gruppiert zusammengehörende Formularelemente:
+                         Hier gehören beide Antwortmöglichkeiten zur selben Frage. -->
+
+                    <legend>Bitte wähle eine Antwort aus:</legend>
+                    <!-- legend ist die Beschriftung bzw. Überschrift des fieldset. -->
+
+                    <p>
+                        <!-- Absatz für die erste Antwortmöglichkeit. -->
+
+                        <input type="radio" id="antwort-put" name="antwort"
+                               value="PUT" required>
+                        <!-- Ein Radio-Button:
+                             type="radio": Es kann nur eine Antwort aus der Gruppe gewählt werden.
+                             id="antwort-put": Eindeutige ID für die Verknüpfung mit dem label.
+                             name="antwort": Beide Radio-Buttons haben denselben Namen und gehören
+                             dadurch zur selben Gruppe.
+                             value="PUT": Dieser Wert wird beim Absenden gesendet, falls diese
+                             Antwort ausgewählt wurde.
+                             required: Das Formular kann erst abgeschickt werden, wenn eine
+                             Antwort aus dieser Radio-Gruppe ausgewählt wurde. -->
+
+                        <label for="antwort-put">A: PUT</label>
+                        <!-- label ist die sichtbare Beschriftung des Radio-Buttons.
+                             for="antwort-put" verbindet das Label mit dem input mit derselben ID.
+                             Klickt man auf den Text „A: PUT“, wird der Radio-Button ausgewählt. -->
+                    </p>
+                    <!-- Ende des Absatzes für Antwort A. -->
+
+                    <p>
+                        <!-- Absatz für die zweite Antwortmöglichkeit. -->
+
+                        <input type="radio" id="antwort-get" name="antwort"
+                               value="GET">
+                        <!-- Zweiter Radio-Button:
+                             id="antwort-get": Eindeutige Kennung für das zugehörige label.
+                             name="antwort": Gleicher Name wie beim ersten Radio-Button,
+                             daher kann nur PUT oder GET gewählt werden.
+                             value="GET": Dieser Wert wird an den Server gesendet,
+                             wenn GET ausgewählt wurde. -->
+
+                        <label for="antwort-get">B: GET</label>
+                        <!-- Beschriftung für den zweiten Radio-Button. -->
+                    </p>
+                    <!-- Ende des Absatzes für Antwort B. -->
+                </fieldset>
+                <!-- Ende der Gruppe mit den Antwortmöglichkeiten. -->
+
+                <button type="submit">Frage abschicken</button>
+                <!-- Ein Absende-Button.
+                     type="submit" sendet das Formular an die Adresse aus action.
+                     Durch required funktioniert das nur, wenn eine Antwort gewählt wurde. -->
+            </form>
+            <!-- Ende des Formulars für die Quizfrage. -->
+        </section>
+        <!-- Ende des Frage-Abschnitts. -->
+
+        <form action="#" method="get">
+            <!-- Ein separates Formular für den Button „Quiz fertig“.
+                 action="#" ist wieder ein Platzhalter.
+                 Beim Absenden bleibt man praktisch auf derselben Seite. -->
+
+            <button type="submit">Quiz fertig</button>
+            <!-- Button zum Abschicken dieses zweiten Formulars. -->
+             
+        </form>
+        <!-- Ende des Formulars für „Quiz fertig“. -->
+         <button type="submit">Hinzufügen</button>
+    </main>
+    <!-- Ende des Hauptinhalts. -->
+
+    <footer>
+        <!-- footer kennzeichnet den Fußbereich der Seite. -->
+
+        <p>h_da Quiz</p>
+        <!-- Beispielinhalt für den Footer. -->
+    </footer>
+    <!-- Ende des Fußbereichs. -->
+</body>
+<!-- Ende des sichtbaren Seitenbereichs. -->
+
+</html>
+<!-- Ende des gesamten HTML-Dokuments. -->

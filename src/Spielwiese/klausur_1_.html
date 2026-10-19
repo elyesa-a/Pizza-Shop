@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "de">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>H_DA - TODO</title>
+        <link rel="stylesheet" href = "Exam.css">
+        <script src="Exam.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>H_DA - TODO</h1>
+
+            <nav>
+                <a href = "#">Home</a>
+                <a href = "#">Impressum</a>
+                <a href = "#">Datenschutz</a>
+
+            </nav>
+
+        </header>
+<hr>
+        <main>
+        
+    <section id="Aufgabe">
+        <h2>Neue Aufgabe erstellen</h2>
+        <form action="Exam.php" method="post"> <!--Formularziel wird an Exam.php gesendet-->
+            <p>
+                <input type="text" name="todo" placeholder="Aufgabe eingeben" required>
+            </p>
+            <p>
+                <input type="checkbox" name="wichtig" id = "important">
+                <label for ="important">Wichtig?</label>
+
+            </p>
+            <p>
+                <input type="hidden" name="status" value="todo">
+            </p>
+            <button type="submit">Hinzufügen</button>
+         </form>
+  
+    </section>
+        </main>
+        <hr>
+        <footer>
+            <p>@2025</p>
+        </footer>
+    </body>
+</html>

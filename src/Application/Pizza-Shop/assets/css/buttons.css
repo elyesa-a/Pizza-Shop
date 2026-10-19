@@ -1,0 +1,23 @@
+.cart-actions { /* Container für die Buttons im Warenkorb */
+    display: flex; 
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+#submit-order {
+    appearance: none; /*das heißt, dass das System nicht den nativen Button zeichnen soll, sondern das Styling*/
+    -webkit-appearance: none;
+    background-color: #2e7d32;   /* grün = aktiv/erlaubt */
+    color: #fff;
+    border: 1px solid #1b5e20;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-order:disabled { /* Wenn der Button deaktiviert ist, wird er grau dargestellt und der Mauszeiger zeigt an, dass er nicht anklickbar ist */
+    background-color: #bbb;       /* grau = gesperrt */
+    border-color: #999;
+    color: #eee;
+    cursor: not-allowed;
+}

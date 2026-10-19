@@ -1,0 +1,4 @@
+body { /* Grundlegende Stile für den gesamten Body der Seite */
+    background-color: #F1E4C3;
+    font-family: var(--font-family-base);
+}
